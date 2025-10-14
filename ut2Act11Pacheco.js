@@ -1,7 +1,7 @@
 //Crear un programa que controle los turnos de la partida de ajedrez
 function iniciarPartida(){
     let turnoActual = 1;
-    const turnosMaximos = 10;
+    const turnosMaximos = 10; //prueba comentar
     while (turnoActual <= turnosMaximos) {
         if(esTurnoBlancas(turnoActual)) {
             console.log(`Turno ${turnoActual} -> Mueven las ♟ negras`);
