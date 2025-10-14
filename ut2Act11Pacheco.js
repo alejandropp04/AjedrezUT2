@@ -17,3 +17,4 @@ function esTurnoBlancas(turno){
     return turno % 2 !== 0;
 }
 
+iniciarPartida();
