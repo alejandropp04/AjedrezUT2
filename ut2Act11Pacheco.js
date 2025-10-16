@@ -1,40 +1,40 @@
 // bermejoDEV: Programa que simula el control de turnos en una partida de ajedrez
-// Comentario del autor: Correcto, el objetivo es controlar la secuencia de turnos mostrando qué jugador mueve en cada uno.
+// Comentario de Pacheco: Efectivamente, el programa controla los turnos alternando entre blancas y negras.
 function iniciarPartida() {
     let turnoActual = 1;               // bermejoDEV: Contador que indica el número de turno actual
-                                      // Comentario del autor: Esta variable se incrementa en cada iteración del bucle.
+                                       // Comentario de Pacheco: Sirve para llevar la cuenta de en qué turno estamos.
     const turnosMaximos = 10;          // bermejoDEV: Límite máximo de turnos de la partida
-                                      // Comentario del autor: Podría modificarse fácilmente si quisiéramos partidas más largas o cortas.
+                                       // Comentario de Pacheco: Límite que determina cuándo acaba la simulación.
 
     // bermejoDEV: Mientras no se alcance el número máximo de turnos, el juego continúa
-    // Comentario del autor: El bucle while es ideal aquí porque no sabemos cuántos turnos se harán hasta que se llegue al máximo.
+    // Comentario de Pacheco: Se usa un bucle while porque el número de repeticiones depende del valor del contador.
     while (turnoActual <= turnosMaximos) {
         // bermejoDEV: Si el turno corresponde a las blancas, se muestra su movimiento
-        // Comentario del autor: Aquí creo que hay un pequeño error, porque las blancas deberían ser ♙ y las negras ♟. 
+        // Comentario de Pacheco: Buen uso de una función auxiliar para decidir el turno. Aunque en este caso el texto de salida parece invertido (las blancas deberían mover ♙).
         if (esTurnoBlancas(turnoActual)) {
             console.log(`Turno ${turnoActual} -> Mueven las ♟ negras`);
         } else {
             // bermejoDEV: En caso contrario, mueven las negras
-            // Comentario del autor: Y aquí sería al revés, deberían mover las blancas.
+            // Comentario de Pacheco: Aquí debería ser el turno de las blancas para mantener la coherencia visual.
             console.log(`Turno ${turnoActual} -> Mueven las ♙ blancas`);
         }
         turnoActual++; // bermejoDEV: Avanza al siguiente turno
-                       // Comentario del autor: Incrementa el contador para pasar al turno siguiente.
+                       // Comentario de Pacheco: Incrementa el contador para pasar al siguiente ciclo del bucle.
     }
 
     // bermejoDEV: Mensaje final cuando se alcanza el número máximo de turnos
-    // Comentario del autor: Mensaje final que marca el fin de la simulación.
+    // Comentario de Pacheco: Informa al usuario de que se ha alcanzado el límite y se detiene el programa.
     console.log("Se alcanzó el número máximo de turnos; partida finalizada");
 }
 
 // bermejoDEV: Función que determina si el turno actual corresponde a las piezas blancas
-// Comentario del autor: Usa el operador módulo (%) para decidir si el turno es par o impar.
+// Comentario de Pacheco: Usa el operador módulo para alternar los turnos entre blancas y negras.
 function esTurnoBlancas(turno) {
     // bermejoDEV: Si el turno es impar, juegan las blancas
-    // Comentario del autor: Correcto, aunque el nombre de la función podría llevar a confusión con el orden de los if en el main.
+    // Comentario de Pacheco: Correcto, los turnos impares pertenecen a las blancas.
     return turno % 2 !== 0;
 }
 
 // bermejoDEV: Inicio del programa; se llama a la función principal para empezar la partida
-// Comentario del autor: Punto de entrada del programa. Se ejecuta automáticamente al cargar el script.
+// Comentario de Pacheco: Punto de entrada que ejecuta toda la lógica del programa.
 iniciarPartida();
